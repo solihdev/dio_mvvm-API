@@ -1,6 +1,5 @@
 import 'package:dio_mvvm/data/repositories/fields_repository.dart';
 import 'package:flutter/foundation.dart';
-
 import '../data/models/fields_model/fields_model.dart';
 import '../data/models/my_response/my_response.dart';
 
@@ -14,8 +13,6 @@ class FieldsViewModel extends ChangeNotifier {
 
   String errorForUI = "";
 
-  bool isLoading = false;
-
   List<FieldsModel> incomeTypes=[];
 
   fetchAllFields() async {
@@ -26,10 +23,6 @@ class FieldsViewModel extends ChangeNotifier {
     } else {
       errorForUI = myResponse.error;
     }
-    notifyListeners();
-  }
-  notify(bool value) {
-    isLoading = value;
     notifyListeners();
   }
 }
