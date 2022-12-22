@@ -6,6 +6,7 @@ import '../data/models/my_response/my_response.dart';
 
 class FieldsViewModel extends ChangeNotifier {
   FieldsViewModel({required FieldRepo fieldRepo}) {
+    // fetchAllFields();
     _fieldRepo = fieldRepo;
   }
 
@@ -15,7 +16,7 @@ class FieldsViewModel extends ChangeNotifier {
 
   bool isLoading = false;
 
-  List<FieldsModel>? incomeTypes;
+  List<FieldsModel> incomeTypes=[];
 
   fetchAllFields() async {
     MyResponse myResponse = await _fieldRepo.getAllFields();

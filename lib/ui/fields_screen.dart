@@ -24,6 +24,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
       ),
       body: Consumer<FieldsViewModel>(
         builder: (context, viewModel, child) {
+          // Provider.of<FieldsViewModel>(context).fetchAllFields();
           if (viewModel.errorForUI.isNotEmpty) {
             return Center(
               child: Text(viewModel.errorForUI),
