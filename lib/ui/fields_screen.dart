@@ -11,12 +11,6 @@ class FieldsScreen extends StatefulWidget {
 
 class _FieldsScreenState extends State<FieldsScreen> {
   @override
-  void initState() {
-    Future.microtask(() => context.read<FieldsViewModel>().fetchAllFields());
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +18,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
       ),
       body: Consumer<FieldsViewModel>(
         builder: (context, viewModel, child) {
-          // Provider.of<FieldsViewModel>(context).fetchAllFields();
+          Provider.of<FieldsViewModel>(context).fetchAllFields();
           if (viewModel.errorForUI.isNotEmpty) {
             return Center(
               child: Text(viewModel.errorForUI),
@@ -32,7 +26,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
           }
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
-            itemCount: viewModel.incomeTypes!.length,
+            itemCount: viewModel.incomeTypes.length,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
                 padding: const EdgeInsets.all(16),
@@ -60,14 +54,14 @@ class _FieldsScreenState extends State<FieldsScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              viewModel.incomeTypes![index].caption,
+                              viewModel.incomeTypes[index].caption,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
                             Text(
-                              viewModel.incomeTypes![index].code,
+                              viewModel.incomeTypes[index].code,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
@@ -82,7 +76,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
                             SizedBox(
                               width: 200,
                               child: Text(
-                                viewModel.incomeTypes![index].fullCaption,
+                                viewModel.incomeTypes[index].fullCaption,
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
@@ -90,7 +84,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
                               ),
                             ),
                             Text(
-                              viewModel.incomeTypes![index].type,
+                              viewModel.incomeTypes[index].code,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
