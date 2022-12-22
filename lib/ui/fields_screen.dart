@@ -2,14 +2,14 @@ import 'package:dio_mvvm/view_model/fields_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FieldsPage extends StatefulWidget {
-  const FieldsPage({Key? key}) : super(key: key);
+class FieldsScreen extends StatefulWidget {
+  const FieldsScreen({Key? key}) : super(key: key);
 
   @override
-  State<FieldsPage> createState() => _FieldsPageState();
+  State<FieldsScreen> createState() => _FieldsScreenState();
 }
 
-class _FieldsPageState extends State<FieldsPage> {
+class _FieldsScreenState extends State<FieldsScreen> {
   @override
   void initState() {
     Future.microtask(() => context.read<FieldsViewModel>().fetchAllFields());
