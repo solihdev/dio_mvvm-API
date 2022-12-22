@@ -14,7 +14,8 @@ class _FieldsScreenState extends State<FieldsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Fields"),
+        centerTitle: true,
+        title: const Text("Fields",style: TextStyle(fontSize: 24,),),
       ),
       body: Consumer<FieldsViewModel>(
         builder: (context, viewModel, child) {
