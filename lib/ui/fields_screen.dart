@@ -84,7 +84,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
                               ),
                             ),
                             Text(
-                              viewModel.incomeTypes[index].code,
+                              viewModel.incomeTypes[index].type,
                               style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
